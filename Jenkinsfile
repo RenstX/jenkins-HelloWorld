@@ -1,6 +1,6 @@
 node {
     def registry = 'registry.gitlab.com'
-    def registryProjet = 'registry.gitlab.com/mygroup4574346/myreg'
+    def registryProjet = 'registry.gitlab.com/projetbtsmichael/myreg'
     def IMAGE_VERSION = "${registryProjet}:version-${env.BUILD_ID}"
     def IMAGE_LATEST = "${registryProjet}:latest"
     def CONTAINER_NAME = "myapp-${env.BUILD_ID}"
