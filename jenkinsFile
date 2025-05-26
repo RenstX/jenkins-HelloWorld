@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage('clone') { 
+            steps {
+                bat "rd /s /q . || exit 0"
+                bat "git clone https://github.com/RenstX/jenkins-HelloWorld"
+            }
+        }
+        stage('build') { 
+            steps {
+                bat "cd jenkins-HelloWorld && javac HelloWorld.java"
+            }
+        }
+        stage('run') { 
+            steps {
+                bat "cd jenkins-HelloWorld && java HelloWorld"
+            }
+        }
+    }
+}
